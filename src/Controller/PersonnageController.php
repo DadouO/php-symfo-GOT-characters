@@ -51,5 +51,22 @@ class PersonnageController extends AbstractController
         ]);
     }
 
+     /**
+     * Matches /personnage//*
+     * @Route("/personnage/{num}/dead", name="personnageMort", requirements={"page"="\d+"})
+     */
+    public function personnageMort($num)
+    {
+
+        $GOT_character =  
+            file_get_contents("https://anapioficeandfire.com/api/characters/${num}");
+            dump($GOT_character);
+
+        //vue 
+        return $this->render('personnage/index.html.twig', [
+            'char' => json_decode($GOT_character)
+        ]);
+    }
+
 
 }

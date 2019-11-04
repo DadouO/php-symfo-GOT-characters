@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+<div >
+    Bienvenu dans chez moi euh.. chez eux en fait
+    Si je puis me permettre choississez bien votre porte..
+    <p>
+    {% for h in house %}
+    <p> 
+    {{h.name }} dans la région de {{h.region}} : " {{h.words}} "
+    </p>
+    {% endfor %}
+    </p>
+
+
+{{dump(house)}}
+
+</div>
+{% endblock %}

@@ -3,24 +3,13 @@
 {% block body %}
 
 
-<div class="example-wrapper">
-<h1>{{ aHello[0] }} {{char.name}}</h1>
+<div >
 
-    {# Le genre de Jon Snow (spoil: c'est un Male !) #}
-    <p> Genre : {{char.gender}}</br>  
-    {# Les informations sur sa date de naissance #}
-    Date de naissance :  {{char.born}} </br>  
-    {# Le nom et prénom de l'acteur qui joue le personnage #}
-    {% if char.playedBy[0] != "" %}
-    Joué.e par {{char.playedBy[0]}}
-    {% endif %}
-    </p>
-
-    <p style="display:none">
     {% if char.died != "" %}
-    Personnage mort
+    <img src="https://pngimage.net/wp-content/uploads/2018/05/dead-cartoon-png-5.png">
+    {% else %}
+     <img src="https://pics.me.me/ahahah-stayin-alive-stayin-alive-6620922.png">
     {% endif %}
-    </p>
 
 {{dump(char)}}
 
