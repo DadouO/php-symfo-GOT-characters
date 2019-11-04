@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+<div class="example-wrapper">
+<h1>{{ aHello[0] }} {{char.name}}</h1>
+
+    {# Le genre de Jon Snow (spoil: c'est un Male !) #}
+    <p> Genre : {{char.gender}}</br>  
+    {# Les informations sur sa date de naissance #}
+    Date de naissance :  {{char.born}} </br>  
+    {# Le nom et prénom de l'acteur qui joue le personnage #}
+    {% if char.playedBy[0] != "" %}
+    Joué.e par {{char.playedBy[0]}}
+    {% endif %}
+    </p>
+
+    <p style="display:none">
+    {% if char.died != "" %}
+    Personnage mort
+    {% endif %}
+    </p>
+
+{{dump(char)}}
+
+</div>
+{% endblock %}
